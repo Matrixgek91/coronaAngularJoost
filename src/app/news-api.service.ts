@@ -15,10 +15,10 @@ export class NewsApiService {
 
 
   initSources(){
-    return this.http.get('https://newsapi.org/v2/sources?language=en&apiKey='+this.api_key);
+    return this.http.get('https://newsapi.org/v2/sources?country=nl&apiKey='+this.api_key);
  }
   initArticles(){
-    return this.http.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='+this.api_key);
+    return this.http.get('https://newsapi.org/v2/top-headlines?q=corona&country=nl&apiKey='+this.api_key);
  }
   getArticlesByID(source: String){
     return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key);
