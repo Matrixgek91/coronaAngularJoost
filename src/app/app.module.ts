@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 /* News API import */
 
@@ -25,7 +26,8 @@ import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    FrontPageComponent
   ],
   imports: [
     BrowserModule,
