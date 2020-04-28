@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 /* News API import */
 
@@ -20,6 +21,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
+
+
 
 /* End materials imports */
 
@@ -27,7 +35,8 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     NewsFeedComponent,
-    FrontPageComponent
+    FrontPageComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,11 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [NewsApiService],
   bootstrap: [AppComponent]

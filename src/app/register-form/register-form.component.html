@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Registreer</h2>
+
+<mat-dialog-content>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Gebruikersnaam</mat-label>
+        <input matInput required>
+    </mat-form-field>
+      <br>
+        <mat-form-field appearance="legacy">
+        <mat-label>Wachtwoord</mat-label>
+        <input matInput required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Voornaam</mat-label>
+        <input matInput required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Achternaam</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Geboortedatum</mat-label>
+        <input matInput>
+        <mat-hint>dd-mm-yyyy</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Geslacht</mat-label>
+        <select matNativeControl>
+            <option value="man">Man</option>
+            <option value="vrouw">Vrouw</option>
+            <option value="overig">Overig</option>
+          </select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Woonplaats</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>
