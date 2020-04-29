@@ -4,33 +4,33 @@
 
     <mat-form-field appearance="legacy">
         <mat-label>Gebruikersnaam</mat-label>
-        <input matInput required>
+        <input matInput required type="text" id="username" [(ngModel)]="registration.username" name="username">
     </mat-form-field>
       <br>
         <mat-form-field appearance="legacy">
         <mat-label>Wachtwoord</mat-label>
-        <input matInput required>
+        <input matInput required type="password" id="password" [(ngModel)]="registration.password" name="password">
     </mat-form-field>
     <br>
     <mat-form-field appearance="legacy">
         <mat-label>Voornaam</mat-label>
-        <input matInput required>
+        <input matInput required type="text" id="firstName" [(ngModel)]="registration.firstName" name="firstName">
     </mat-form-field>
     <br>
     <mat-form-field appearance="legacy">
         <mat-label>Achternaam</mat-label>
-        <input matInput>
+        <input matInput type="text" id="lastName" [(ngModel)]="registration.lastName" name="lastName">
     </mat-form-field>
     <br>
     <mat-form-field appearance="legacy">
         <mat-label>Geboortedatum</mat-label>
-        <input matInput>
+        <input matInput type="text" id="dateOfBirth" [(ngModel)]="registration.dateOfBirth" name="dateOfBirth">
         <mat-hint>dd-mm-yyyy</mat-hint>
     </mat-form-field>
     <br>
     <mat-form-field appearance="legacy">
         <mat-label>Geslacht</mat-label>
-        <select matNativeControl>
+        <select matNativeControl id="gender" [(ngModel)]="registration.gender" name="gender">
             <option value="man">Man</option>
             <option value="vrouw">Vrouw</option>
             <option value="overig">Overig</option>
@@ -39,11 +39,11 @@
     <br>
     <mat-form-field appearance="legacy">
         <mat-label>Woonplaats</mat-label>
-        <input matInput>
+        <input matInput type="text" id="city" [(ngModel)]="registration.city" name="city">
     </mat-form-field>
 
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button" (click)="save()">Stuur Registratie</button>
 </mat-dialog-actions>

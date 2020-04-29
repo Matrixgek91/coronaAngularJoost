@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { FormsModule } from '@angular/forms';
 
 /* News API import */
 
@@ -42,6 +43,7 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     MatSliderModule,
     MatButtonModule,
     MatMenuModule,

@@ -1,19 +1,30 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { RegistrationService } from '../registration.service';
+import { Registration } from '../registration'
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.css']
+  styleUrls: ['./register-form.component.css'],
+  providers: [RegistrationService]
 })
 export class RegisterFormComponent implements OnInit {
 
-  constructor(public dialogRef : MatDialogRef<RegisterFormComponent>) { }
+  registration = new Registration()
 
-  close() {
-    this.dialogRef.close();
+  //constructor(public dialogRef : MatDialogRef<RegisterFormComponent>) { }
+
+  constructor (public registrationService: RegistrationService) { }
+  
+  save() {
+    console.log(this.registration.firstName);
+    this.registrationService.save(this.registration).subscribe(
+      
+    );
   }
 
+  
   ngOnInit(): void {
   }
 
