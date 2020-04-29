@@ -26,6 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 
 
@@ -37,7 +40,10 @@ import {MatSelectModule} from '@angular/material/select';
     AppComponent,
     NewsFeedComponent,
     FrontPageComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    LoginFormComponent,
+    RegisterDialogComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,

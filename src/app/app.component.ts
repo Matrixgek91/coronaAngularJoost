@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 
 @Component({
@@ -13,9 +14,17 @@ export class AppComponent {
 
   constructor(private matDialog: MatDialog) {}
 
-  openDialog() {
+  openRegisterDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {name: "some name"};
-    this.matDialog.open(RegisterFormComponent, dialogConfig);
+    dialogConfig.data = {name: "registreer"};
+    this.matDialog.open(RegisterDialogComponent, dialogConfig);
   }
+
+  openLoginDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {name: "login"};
+    this.matDialog.open(LoginDialogComponent, dialogConfig);
+  }
+
+
 }

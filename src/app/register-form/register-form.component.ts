@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { Component, OnInit, Input } from '@angular/core';
+
 import { RegistrationService } from '../registration.service';
 import { Registration } from '../registration'
+import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-register-form',
@@ -11,17 +12,20 @@ import { Registration } from '../registration'
 })
 export class RegisterFormComponent implements OnInit {
 
+  @Input()
+  dialog: RegisterDialogComponent
+
   registration = new Registration()
 
-  //constructor(public dialogRef : MatDialogRef<RegisterFormComponent>) { }
 
   constructor (public registrationService: RegistrationService) { }
   
   save() {
-    console.log(this.registration.firstName);
     this.registrationService.save(this.registration).subscribe(
-      
+    () => this.dialog.close()
     );
+    
+
   }
 
   
