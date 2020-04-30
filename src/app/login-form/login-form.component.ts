@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../login.service';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { Login } from '../login';
+import { Registration } from '../registration';
 
 @Component({
   selector: 'app-login-form',
@@ -19,7 +20,16 @@ export class LoginFormComponent implements OnInit {
   constructor(public loginService: LoginService) { }
 
   verify() {
-
+    this.loginService.verify(this.login).subscribe(
+      data => {if (data.length == 0){
+        //not logged in
+        console.log("Inlog mislukt")
+      } else {
+        data[0].firstName
+        //logged in
+        console.log("Inlog gelukt")
+      }     
+      });
   }
 
   ngOnInit(): void {
