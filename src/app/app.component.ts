@@ -13,7 +13,7 @@ import { ViaService } from './via-service/via.service';
 export class AppComponent implements OnInit {
   title = 'corona-app';
 
-  firstName: string = '<empty>';
+  firstName: string = '';
  
 
   constructor(private matDialog: MatDialog, public viaService : ViaService) {}
@@ -31,7 +31,8 @@ export class AppComponent implements OnInit {
   }
 
   logout(){
-
+    sessionStorage.clear();
+    this.firstName = '';
   }
 
   refreshLoginStatus() {
