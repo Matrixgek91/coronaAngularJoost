@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../login.service';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { Login } from '../login';
-import { Registration } from '../registration';
+import { ViaService } from '../via-service/via.service';
+
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +18,10 @@ export class LoginFormComponent implements OnInit {
 
   login = new Login()
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, public viaService: ViaService) { }
+
+  
+
 
   verify() {
     this.loginService.verify(this.login).subscribe(
@@ -25,14 +29,22 @@ export class LoginFormComponent implements OnInit {
         //not logged in
         console.log("Inlog mislukt")
       } else {
-        data[0].firstName
         //logged in
+        sessionStorage.setItem('userId', (data[0].userId).toString())
+        sessionStorage.setItem('firstName', data[0].firstName)
+
+        this.viaService.sendMessage(data[0].firstName)
+
+        //root.refreshLoginStatus()
+        
         console.log("Inlog gelukt")
+        this.dialog.close()
       }     
       });
   }
 
   ngOnInit(): void {
+    
   }
 
 }

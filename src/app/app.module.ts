@@ -29,6 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterDialogComponent } from './register-dialog/register-dialog.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { ViaServiceComponent } from './via-service/via-service.component';
+
 
 
 
@@ -43,7 +45,8 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     RegisterFormComponent,
     LoginFormComponent,
     RegisterDialogComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    ViaServiceComponent    
   ],
   imports: [
     BrowserModule,
